@@ -21,16 +21,16 @@ const events = [
 		name: "Vitalis's Birthday Party",
 		description: "Vitalis 27th Birthday in Paris",
 		location: "Paris France",
-        duration: "All Day",
-        lucky_number: 27,
-        status: "Pending"
+		duration: "All Day",
+		lucky_number: 27,
+		status: "Pending"
 	},
 ];
 
 server.addService(eventsProto.EventService.service, {
-	
-    getAllEvents: (_, callback) => {
-		callback(null, {events});
+
+	getAllEvents: (_, callback) => {
+		callback(null, { events });
 	},
 
 	getEvent: (call, callback) => {
@@ -48,7 +48,7 @@ server.addService(eventsProto.EventService.service, {
 
 	createEvent: (call, callback) => {
 		let event = call.request;
-		
+
 		event.id = uuidv4();
 		events.push(event);
 		callback(null, event);
@@ -61,9 +61,9 @@ server.addService(eventsProto.EventService.service, {
 			existingEvent.name = call.request.name;
 			existingEvent.description = call.request.description;
 			existingEvent.location = call.request.location;
-            existingEvent.duration = call.request.duration;
-            existingEvent.lucky_number = call.request.lucky_number;
-            existingEvent.status = call.request.status;
+			existingEvent.duration = call.request.duration;
+			existingEvent.lucky_number = call.request.lucky_number;
+			existingEvent.status = call.request.status;
 			callback(null, existingEvent);
 		} else {
 			callback({

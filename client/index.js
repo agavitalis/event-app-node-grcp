@@ -2,7 +2,8 @@ const client = require("./client");
 
 const express = require("express");
 const app = express();
-
+app.use(express.json());
+app.use(express.urlencoded()); 
 
 app.get("/", (req, res) => {
 	client.getAllEvents(null, (err, data) => {
@@ -29,7 +30,7 @@ app.post("/createEvent", (req, res) => {
 		if (err) throw err;
 		res.status(200).send({
 			data,
-			message:'Event created successfully'
+			message: 'Event created successfully'
 		});
 	});
 });
@@ -49,7 +50,7 @@ app.post("/updateEvent", (req, res) => {
 
 		res.status(200).send({
 			data,
-			message:'Event updated successfully'
+			message: 'Event updated successfully'
 		});
 	});
 });
@@ -59,7 +60,7 @@ app.delete("/deleteEvent", (req, res) => {
 		if (err) throw err;
 
 		res.status(200).send({
-			message:'Event deleted successfully'
+			message: 'Event deleted successfully'
 		});
 	});
 });
