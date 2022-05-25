@@ -1,16 +1,16 @@
 const PROTO_PATH = "./events.proto";
 
-var grpc = require("grpc");
-var protoLoader = require("@grpc/proto-loader");
+let grpc = require("grpc");
+let protoLoader = require("@grpc/proto-loader");
 
-var packageDefinition = protoLoader.loadSync(PROTO_PATH, {
+let packageDefinition = protoLoader.loadSync(PROTO_PATH, {
 	keepCase: true,
 	longs: String,
 	enums: String,
 	arrays: true
 });
 
-var eventsProto = grpc.loadPackageDefinition(packageDefinition);
+let eventsProto = grpc.loadPackageDefinition(packageDefinition);
 
 const { v4: uuidv4 } = require("uuid");
 
@@ -74,12 +74,12 @@ server.addService(eventsProto.EventService.service, {
 	},
 
 	deleteEvent: (call, callback) => {
-		let existingCustomerIndex = events.findIndex(
+		let existingEventIndex = events.findIndex(
 			n => n.id == call.request.id
 		);
 
-		if (existingCustomerIndex != -1) {
-			events.splice(existingCustomerIndex, 1);
+		if (existingEventIndex != -1) {
+			events.splice(existingEventIndex, 1);
 			callback(null, {});
 		} else {
 			callback({

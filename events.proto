@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+package event;
+
 service EventService {
     rpc GetAllEvents (Empty) returns (EventList) {}
     rpc GetEvent (EventId) returns (Event) {}
