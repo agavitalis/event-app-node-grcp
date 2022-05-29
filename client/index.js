@@ -3,7 +3,6 @@ const client = require("./app");
 const express = require("express");
 const app = express();
 app.use(express.json());
-app.use(express.urlencoded()); 
 
 app.get("/", (req, res) => {
 	client.getAllEvents(null, (err, data) => {
@@ -65,7 +64,7 @@ app.delete("/deleteEvent", (req, res) => {
 	});
 });
 
-const PORT = process.env.PORT || 3500;
+const PORT = process.env.PORT || 50050;
 app.listen(PORT, () => {
 	console.log("Client Server listening to port %d", PORT);
 });

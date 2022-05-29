@@ -4,7 +4,8 @@
   "description": "A CRUD aplication to demonstrate the use of gRPC with NodeJS",
   "main": "server/index.js",
   "scripts": {
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "generate:certs": "./scripts/generate-certs.sh"
   },
   "author": "Ogbonna Vitalis",
   "license": "ISC",
