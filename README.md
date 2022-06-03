@@ -19,7 +19,7 @@ $ npm start
 
 # Start the Client
 - Open a new terminal window, with the previous terminal open, from the root directory of the application
-naviage to the `clinet` folder and execute the following command:
+naviage to the `client` folder and execute the following command:
 
 ```
 $ node index
