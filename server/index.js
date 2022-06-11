@@ -26,7 +26,7 @@ const events = [
 	{
 		id: "34415c7c-f82d-4e44-88ca-ae2a1aaa92b7",
 		name: "Vitalis's Birthday Party",
-		description: "Vitalis 27th Birthday in Paris",
+		description: "Vitalis's 27th Birthday in Paris",
 		location: "Paris France",
 		duration: "All Day",
 		lucky_number: 27,
