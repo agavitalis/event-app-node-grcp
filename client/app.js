@@ -17,7 +17,7 @@ const credentials = grpc.credentials.createSsl(
 );
 
 const EventService = grpc.loadPackageDefinition(packageDefinition).EventService;
-//establising an insecure connection
+//establishing an insecure connection
 //const client = new EventService("127.0.0.1:50051",grpc.credentials.createInsecure());
 const client = new EventService("localhost:50051",credentials);
 module.exports = client;
